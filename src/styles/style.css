@@ -1,0 +1,206 @@
+*{
+    margin:0;
+    
+}
+header img{
+    width: 50px;
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(160, 119, 200);
+}
+header div:nth-child(1) h1{
+    display: inline;
+}
+h3{
+    margin:10px;
+}
+.main-container{
+    /* display: flex; */
+    /* justify-content: space-between; */
+   
+}
+.project-type-container{
+    /* flex-basis: 20%; */
+    min-width:200px ;
+    background-color: lightblue;
+    text-align: center;
+    height: 90vh;
+    position: absolute;
+}
+.project-type-container h3 i{
+    margin:2px 0.5em;
+    cursor: pointer;
+}
+.main-section-container{
+   position: absolute;
+   left: 200px;
+    right: 0;
+    text-align: center;
+    background-color: rgb(35, 35, 68);
+    height: 90vh;
+    color:white;
+}
+.task-add {
+  width: 90%;
+  min-width: 350px;
+  padding:15px;
+  margin:10px auto;
+  border:rgb(246, 96, 10) 2px solid;
+  border-radius: 10px;
+}
+.task-add div{
+ 
+}
+.task-add label{
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+}
+.task-add input{
+    width: 90%;
+    padding:5px;
+    font-size: medium;
+    font-weight: 500;
+    margin:10px auto;
+    background-color: transparent;
+    outline: none;
+    border:transparent 1px solid;
+   
+}
+.task-add input:focus{
+    border-bottom: 1px solid pink;
+}
+.task-add button{
+  
+    padding:5px 10px;
+    margin:10px;
+    width: 100px;
+}
+.priority-container {
+    display: flex;
+   flex-direction: row;
+}
+
+
+
+.priority-container button{
+    color:white;
+    border:1px solid rgb(113, 106, 106);
+    border-radius: 5px;
+}
+
+
+#high{
+    background-color: red;
+}
+#medium{
+    background-color: orange;
+}
+#low{
+    background-color: green;
+}
+.task-add> button{
+    background-color:rgb(8, 15, 75);
+    border-radius: 30px;
+    border:none;
+color:white;
+    padding:10px 20px;
+}
+#task-bar{
+    margin: 8em auto;
+    width: 30%;
+}
+.project{
+    width: 30%;
+    margin: 15rem auto;
+    border-radius: 20px;
+}
+.main-project-container{
+    padding: 2em;
+  
+}
+.main-project-container input{
+    width: 70%;
+    font-size: xx-large;
+    font-weight: 600;
+    border: none;
+    padding: 10px;
+    outline: none;
+    min-width: 255px;
+}
+.main-project-container i{
+    position: absolute;
+    right: 22px;
+    top: 20px;
+}
+.main-project-container button{
+    position: absolute;
+    bottom: 2em;
+    font-weight: 500;
+    font-size:medium;
+    padding: 10px 20px;
+    color:whitesmoke;
+    background-color: rgb(42, 42, 185);
+    border-radius: 20px;
+
+
+}
+.project-info{
+    margin: auto;
+    width: 40%;
+}
+.project-tasks{
+    display: flex;
+    align-items: center;
+    border:2px solid pink;
+}
+.taskName{
+    display: flex;
+    flex-basis: 80%;
+}
+.project-tasks i{
+    padding:5px 10px;
+    font-size: 25px;
+}
+.project-show{
+    min-height: 300px;
+}
+.project-name-container{
+    border:gray 1px solid;
+}
+.project-name-container input{
+    width: 90%;
+    font-size: x-large;
+    outline: none;
+    border: none;
+}
+.project-name-container i{
+    padding:10px;
+}
+
+.flex-container{
+display: flex;
+justify-content: space-around;
+}
+.added-task-container{
+    flex-basis: 60%;
+
+}
+.task-box{
+    display: flex
+;
+    justify-content: space-between;
+    align-items: center;
+}
+.task-box input{
+    min-width: 300px
+    te
+}
+.editing i{
+    font-size: 25px;
+    padding: 5px 10px;
+}
+
+
