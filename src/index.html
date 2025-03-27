@@ -31,7 +31,11 @@
         <h3>
           Add Project <i class="fa-solid fa-circle-plus project-adding"></i>
         </h3>
-        <div class="project-container"></div>
+        <div class="project-container">
+          <h3><i class="fa-solid fa-list-check"></i> First Project</h3>
+          <h3><i class="fa-solid fa-list-check"></i> second Project</h3>
+          <h3><i class="fa-solid fa-list-check"></i> third Project</h3>
+        </div>
       </div>
       <div class="main-section-container">
         <h1>Welcome User... Plan Your Day In Advance</h1>
@@ -93,27 +97,30 @@
             placeholder="Add a List Title"
           />
           <button class="project-btn-continue">Continue</button>
-          <i class="fa-solid fa-xmark"></i>
+          <i class="fa-solid fa-xmark project-add-cancel"></i>
         </div>
       </dialog>
 
       <dialog class="project-info">
         <div class="projects">
           <div class="project-show">
+            <h3 id="project-title">Project</h3>
+            <i class="fa-solid fa-xmark cancel"></i>
             <div class="project-tasks">
               <div class="taskName">
                 <input type="checkbox" name="" id="" />
                 <h3>Heelo this is my first tasks</h3>
               </div>
-              <div>
-                <i class="fa-solid fa-pen-to-square"></i>
-                <i class="fa-solid fa-trash"></i>
-              </div>
             </div>
           </div>
           <div class="project-name-container">
-            <i class="fa-solid fa-plus"></i>
-            <input type="text" name="" id="" placeholder="Add-task" />
+            <input
+              type="text"
+              name=""
+              id="task-adding"
+              placeholder="Add-task"
+            />
+            <i class="fa-solid fa-arrow-up"></i>
           </div>
         </div>
       </dialog>

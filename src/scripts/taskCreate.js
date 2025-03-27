@@ -8,5 +8,11 @@ export function Task(taskName, dueDate, priority) {
   this.dueDate = dueDate;
   this.priority = priority;
 }
+export function selectedPriority() {
+  const radios = document.getElementsByName("priority");
 
-// export
+  for (let el of radios) {
+    if (el.checked) return el.value;
+  }
+  return "no Priority set";
+}

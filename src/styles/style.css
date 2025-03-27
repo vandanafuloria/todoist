@@ -152,9 +152,10 @@ color:white;
     width: 40%;
 }
 .project-tasks{
-    display: flex;
+    /* display: flex;
+    fle
     align-items: center;
-    border:2px solid pink;
+    border:2px solid pink; */
 }
 .taskName{
     display: flex;
