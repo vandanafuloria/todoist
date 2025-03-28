@@ -5,6 +5,11 @@ const projectBtn = document.querySelector(".project-btn-continue");
 const projectSet = document.querySelector(".project");
 const projectInfoEl = document.querySelector(".project-info");
 
+/**
+ *
+ * @param {*} newTask
+ * @returns  complete task bar which is formed by the user with edit and delete fucntionality;
+ */
 export function addTaskBar(newTask) {
   const taskBarEl = document.createElement("div");
   taskBarEl.classList.add("task-box");
@@ -41,6 +46,11 @@ export function addTaskBar(newTask) {
   return taskBarEl;
 }
 
+/**
+ *@brief added project will add to dom of project info container;
+ * @param {} task
+ * @returns created task element with all info;
+ */
 export function addNewTask(task) {
   const taskNameDiv = document.createElement("div");
   taskNameDiv.classList.add("taskName");
@@ -54,17 +64,29 @@ export function addNewTask(task) {
   return taskNameDiv;
 }
 
-export function listProject() {
-  const h3El = document.createElement("h3");
-  const projectIcon = document.createElement("i");
-  projectIcon.classList.add("fa-solid", "fa-list-check");
-  h3El.appendChild(projectIcon);
-  const x = projectTaskAdd();
+/**
+ *
+ */
+export function listProject(name) {
+  // Create the h3 element
+  let h3 = document.createElement("h3");
 
-  console.log(x);
+  // Create the i element
+  let i = document.createElement("i");
+  i.classList.add("fa-solid", "fa-list-check");
 
-  h3El.innerText = x;
-  console.log(h3El);
+  // Append the icon to the h3
+  h3.appendChild(i);
+  h3.appendChild(document.createTextNode(" " + name));
+  console.log("this is h3", h3);
+  return h3;
 }
 
-projectBtn.addEventListener("click", listProject);
+export function getFormattedToday() {
+  const today = new Date();
+  const day = today.getDate(); // 28
+  const month = today.toLocaleString("default", { month: "long" }); // "March"
+  const year = today.getFullYear(); // 2025
+
+  return `${day} ${month} ${year}`; // "28 March 2025"
+}

@@ -10,35 +10,111 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=PT+Sans+Narrow:wght@400;700&family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles/style.css" />
     <title>todoist</title>
   </head>
   <body>
     <header>
       <div>
-        <img src="../images/logo.png" alt="" />
+        <img src="../images/to-do.png" alt="" />
         <h1>Todoist</h1>
       </div>
       <div>
-        <h3>March <span>25</span> 2025</h3>
+        <h3 id="day"></h3>
       </div>
     </header>
     <section class="main-container">
       <div class="project-type-container">
         <h3>Add task <i class="fa-solid fa-circle-plus task"></i></h3>
         <h3>See All My Tasks</h3>
-        <h3>Journaliing</h3>
+        <h3>Journaliing<i class="fa-solid fa-book"></i></h3>
         <h3>
           Add Project <i class="fa-solid fa-circle-plus project-adding"></i>
         </h3>
-        <div class="project-container">
-          <h3><i class="fa-solid fa-list-check"></i> First Project</h3>
+        <div id="project-container">
           <h3><i class="fa-solid fa-list-check"></i> second Project</h3>
           <h3><i class="fa-solid fa-list-check"></i> third Project</h3>
         </div>
       </div>
       <div class="main-section-container">
         <h1>Welcome User... Plan Your Day In Advance</h1>
+
+        <div class="project-view-container">
+          <h3>project</h3>
+          <input
+            type="text"
+            name=""
+            id="project-name"
+            placeholder="first Project"
+            readonly
+          />
+
+          <!--first-->
+          <div class="task-view">
+            <div class="project-task-view">
+              <input type="checkbox" name="" id="" />
+              <input
+                type="text"
+                name=""
+                id=""
+                value="This is my fist project"
+                readonly
+              />
+            </div>
+            <div class="icons">
+              <i class="fa-solid fa-pen"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+          </div>
+          <!--2rd-->
+          <div class="task-view">
+            <div class="project-task-view">
+              <input type="checkbox" name="" id="" />
+              <input
+                type="text"
+                name=""
+                id=""
+                value="this is my project"
+                readonly
+              />
+            </div>
+            <div class="icons">
+              <i class="fa-solid fa-pen"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+          </div>
+
+          <!--3rd-->
+
+          <div class="task-view">
+            <div class="project-task-view">
+              <input type="checkbox" name="" id="" />
+              <input
+                type="text"
+                name=""
+                id=""
+                value="This is my fist project"
+                readonly
+              />
+            </div>
+            <div class="icons">
+              <i class="fa-solid fa-pen"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+          </div>
+        </div>
         <div class="flex-container">
           <div class="added-task-container">
             <div class="task-box">
@@ -47,7 +123,7 @@
                 <h3>Hele my task element is this</h3>
               </div>
               <div>
-                <span>21-march-2025</span>
+                <span>21-04-2025</span>
               </div>
               <div class="editing">
                 <i class="fa-solid fa-pen-to-square"></i>
@@ -105,7 +181,7 @@
         <div class="projects">
           <div class="project-show">
             <h3 id="project-title">Project</h3>
-            <i class="fa-solid fa-xmark cancel"></i>
+            <i class="fa-solid fa-xmark cancel-btn"></i>
             <div class="project-tasks">
               <div class="taskName">
                 <input type="checkbox" name="" id="" />

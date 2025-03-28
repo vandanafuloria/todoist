@@ -2,16 +2,33 @@
     margin:0;
     
 }
+:root{
+    --primary-color: #0b1221;
+    --light-blue:rgb(195, 222, 233);
+}
 header img{
     width: 50px;
+
 }
 header{
     display: flex;
-    justify-content: space-around;
-    background-color: rgb(160, 119, 200);
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    color:white;
+    position: sticky;
+    z-index: 2;
+}
+header  div:nth-child(1){
+    align-items: center;
 }
 header div:nth-child(1) h1{
     display: inline;
+    font-size: xxx-large;
+    padding: 2px 20px;
+}
+header div:nth-child(2){
+color:#5bd7ff;
+font-size: xx-large;
 }
 h3{
     margin:10px;
@@ -24,10 +41,15 @@ h3{
 .project-type-container{
     /* flex-basis: 20%; */
     min-width:200px ;
-    background-color: lightblue;
+    background-color: rgb(44, 46, 47);
     text-align: center;
     height: 90vh;
     position: absolute;
+    font-family: sans-serif;
+    font-weight:100;
+   font-size:small;
+   color: var(--light-blue);
+   
 }
 .project-type-container h3 i{
     margin:2px 0.5em;
@@ -38,16 +60,17 @@ h3{
    left: 200px;
     right: 0;
     text-align: center;
-    background-color: rgb(35, 35, 68);
+    background: rgb(181,235,225);
+    background: linear-gradient(108deg, rgba(181,235,225,1) 0%, rgba(172,182,229,1) 99%);
     height: 90vh;
-    color:white;
+ 
 }
 .task-add {
   width: 90%;
   min-width: 350px;
   padding:15px;
   margin:10px auto;
-  border:rgb(246, 96, 10) 2px solid;
+ 
   border-radius: 10px;
 }
 .task-add div{
@@ -67,16 +90,20 @@ h3{
     background-color: transparent;
     outline: none;
     border:transparent 1px solid;
+    color: white;
    
 }
 .task-add input:focus{
-    border-bottom: 1px solid pink;
+    border-bottom: 1px solid rgb(117, 182, 190);
+    color: var(--light-blue);
+
+}
+#date{
+    color:var(--light-blue)
 }
 .task-add button{
   
-    padding:5px 10px;
-    margin:10px;
-    width: 100px;
+  
 }
 .priority-container {
     display: flex;
@@ -102,15 +129,27 @@ h3{
     background-color: green;
 }
 .task-add> button{
-    background-color:rgb(8, 15, 75);
+    background-color:rgb(18, 27, 105);
     border-radius: 30px;
     border:none;
-color:white;
-    padding:10px 20px;
+    font-weight: 800;
+    font-size: large;
+    color:var(--light-blue);
+    padding: 10px 50px;
+    border: 1px gray solid;
 }
+
+  
+
 #task-bar{
-    margin: 8em auto;
+    
     width: 30%;
+    margin:auto;
+    border-radius: 30px;
+    padding:10px;
+    background-color: #0b1221ef;
+    color: white;
+    
 }
 .project{
     width: 30%;
@@ -177,6 +216,7 @@ color:white;
     outline: none;
     border: none;
 }
+
 .project-name-container i{
     padding:10px;
 }
@@ -187,21 +227,62 @@ justify-content: space-around;
 }
 .added-task-container{
     flex-basis: 60%;
+    margin: auto;
 
 }
 .task-box{
     display: flex
 ;
+
     justify-content: space-between;
     align-items: center;
 }
-.task-box input{
-    min-width: 300px
-    te
+.task-box h3{
+    min-width: 300px;
+    text-align: left;
+    
 }
+.main-section-container>h1{
+font-size: xxx-large;
+font-family: "Barlow Condensed", sans-serif;
+font-weight: 700;;
+}
+.added-task-container>div{
+    border:1px solid green;
+    margin:2em;
+}
+
 .editing i{
     font-size: 25px;
     padding: 5px 10px;
 }
+#project-container { 
+    text-align: left !important;
+    background-color: rgb(255, 0, 166);
+}
 
 
+
+
+
+/********************************************************/
+.project-view-container{
+  
+    position: absolute;
+    border: 2px solid yellow;
+    background-color: pink;
+    width: 50%;
+    min-width: 300px;
+    height: 400px;
+    left: 20em;
+    top: 8em;
+    display: none;
+}
+.task-view{
+    display: flex;
+    justify-content: space-around;
+}
+.icons i{
+    padding:10px;
+    font-size: 20px;
+}
