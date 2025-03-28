@@ -51,6 +51,11 @@ h3{
    color: var(--light-blue);
    
 }
+
+.priority-container input[type="radio"] {
+    display: none;
+  }
+
 .project-type-container h3 i{
     margin:2px 0.5em;
     cursor: pointer;
@@ -108,26 +113,38 @@ h3{
 .priority-container {
     display: flex;
    flex-direction: row;
+ justify-content: space-between;
+ text-align: center;
+ margin:20px 10px;
+ 
+
 }
+.priority-container label{
+    padding:10px;
+    text-align: center;
+    width: 80px;
+    border-radius: 10px;
+    background-color: #0b1221;
 
-
-
-.priority-container button{
-    color:white;
-    border:1px solid rgb(113, 106, 106);
-    border-radius: 5px;
 }
-
-
-#high{
+label:has(#high:checked) {
     background-color: red;
-}
-#medium{
+  }
+  
+  label:has(#medium:checked) {
     background-color: orange;
-}
-#low{
+  }
+  
+  label:has(#low:checked) {
     background-color: green;
-}
+  }
+  .dueDate{
+    padding:10px;
+    font-size: medium;
+    font-weight: 700;
+  }
+
+
 .task-add> button{
     background-color:rgb(18, 27, 105);
     border-radius: 30px;

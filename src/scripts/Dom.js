@@ -1,3 +1,4 @@
+import { DEFAULT_STATS } from "webpack-dev-server";
 import { handleAddTask } from "./index.js";
 import { projectTaskAdd } from "./project.js";
 
@@ -19,18 +20,33 @@ export function addTaskBar(newTask) {
   taskBox.classList.add("task-box");
   const taskBoxCheckbox = document.createElement("input");
   taskBoxCheckbox.setAttribute("type", "checkbox");
-  const taskEl = document.createElement("h3");
+  const taskEl = document.createElement("input");
   taskEl.innerText = newTask.taskName;
 
   taskBox.append(taskBoxCheckbox, taskEl);
 
   // task due date addtion
+
   const dueDateEl = document.createElement("div");
+  dueDateEl.classList.add("dueDate");
   const lastDate = document.createElement("span");
-  lastDate.innerText = newTask.dueDate;
+
+  if (newTask.dueDate === "") {
+    lastDate.innerText = "No Hurry";
+  } else {
+    lastDate.innerText = newTask.dueDate;
+  }
   dueDateEl.appendChild(lastDate);
 
-  // add edit and deltel icon
+  // Setting the background color based on priority
+  const priorityColors = {
+    high: "red",
+    medium: "orange",
+    low: "green",
+  };
+
+  const priority = newTask.priority || "low"; // Default to "low" if priority is not set
+  dueDateEl.style.backgroundColor = priorityColors[priority] || "yellow";
 
   const iconContainer = document.createElement("div");
   iconContainer.classList.add("editing");

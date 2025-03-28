@@ -6,6 +6,7 @@ import { generateProjectInfo } from "./project.js";
 import { projectTaskAdd } from "./project.js";
 import { listProject } from "./Dom.js";
 import { getFormattedToday } from "./Dom.js";
+import { removeRadioValue } from "./taskCreate.js";
 
 const todayDate = document.querySelector("#day");
 const dialogEl = document.querySelector("#task-bar");
@@ -47,6 +48,7 @@ export function handleAddTask() {
   const newTask = new Task(nameOfTask, dateOfDue, priority);
   taskName.value = "";
   dueDate.value = "";
+  removeRadioValue();
 
   dialogEl.close();
   mainSectionEl.style.filter = "blur(0px)";

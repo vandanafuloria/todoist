@@ -16,3 +16,17 @@ export function selectedPriority() {
   }
   return "no Priority set";
 }
+
+/**
+ * @brief setting the radio value to unchecked;
+ * @returns nothing;
+ */
+export function removeRadioValue() {
+  const highEl = document.getElementById("high");
+  const mediumEl = document.getElementById("medium");
+  const lowEl = document.getElementById("low");
+
+  highEl.checked = false;
+  mediumEl.checked = false;
+  lowEl.checked = false;
+}
