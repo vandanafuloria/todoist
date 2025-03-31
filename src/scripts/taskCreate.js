@@ -57,11 +57,23 @@ export function editTask(e) {
   dateInput.readOnly = false;
   dateInput.focus();
 
-  console.log(taskInputBox);
   const taskName = taskInputBox.childNodes[1];
-  console.log(taskName);
   taskName.readOnly = false;
   taskName.focus();
-  taskName.style.borderBottom = "yellow 4px dotted";
-  console.log(taskName);
+  taskName.style.borderBottom = "yellow 1px dotted";
+}
+export function saveEditedTask(e) {
+  const editBtn = e.target;
+  const edit = editBtn.parentElement.parentElement;
+
+  const taskInputBox = edit.firstChild;
+  const date = taskInputBox.nextElementSibling;
+  const dateInput = date.firstChild;
+  dateInput.readOnly = true;
+  dateInput.blur();
+
+  const taskName = taskInputBox.childNodes[1];
+  taskName.readOnly = true;
+  taskName.blur();
+  taskName.style.borderBottom = "transparent";
 }

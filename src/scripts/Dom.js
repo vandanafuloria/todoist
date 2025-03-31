@@ -1,6 +1,6 @@
 import { handleAddTask } from "./index.js";
 import { projectTaskAdd } from "./project.js";
-import { deleteTask } from "./taskCreate.js";
+import { deleteTask, saveEditedTask } from "./taskCreate.js";
 import { editTask } from "./taskCreate.js";
 
 const projectBtn = document.querySelector(".project-btn-continue");
@@ -36,6 +36,7 @@ export function addTaskBar(newTask) {
 
   const lastDate = document.createElement("input");
   lastDate.classList.add("due-date-input");
+  lastDate.setAttribute("type", "date");
   lastDate.readOnly = true;
 
   if (newTask.dueDate === "") {
@@ -76,6 +77,7 @@ export function addTaskBar(newTask) {
   deleteEl.addEventListener("click", deleteTask);
 
   editEl.addEventListener("click", editTask);
+  saveEl.addEventListener("click", saveEditedTask);
 
   return taskBarEl;
 }
