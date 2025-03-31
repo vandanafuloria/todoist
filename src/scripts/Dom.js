@@ -54,7 +54,7 @@ export function addTaskBar(newTask) {
   };
 
   const priority = newTask.priority || "low"; // Default to "low" if priority is not set
-  dueDateEl.style.backgroundColor = priorityColors[priority] || "yellow";
+  dueDateEl.style.backgroundColor = priorityColors[priority] || "white";
 
   const iconContainer = document.createElement("div");
   iconContainer.classList.add("editing");

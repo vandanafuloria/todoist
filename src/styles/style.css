@@ -24,12 +24,14 @@ header  div:nth-child(1){
 header div:nth-child(1) h1{
     display: inline;
     font-size: xxx-large;
-    padding: 2px 20px;
+   
 }
+
 header div:nth-child(2){
 color:#5bd7ff;
-font-size: xx-large;
+font-size: large;
 }
+
 h3{
     margin:10px;
 }
@@ -166,6 +168,14 @@ label:has(#high:checked) {
     color: white;
     
 }
+.task-add-cancel{
+    position: absolute;
+    right: 17px;
+    top: 10px;
+    border-radius: 50%;
+    padding: 2px 4px;
+    background: red;
+}
 .project{
     width: 30%;
     margin: 15rem auto;
@@ -212,24 +222,46 @@ label:has(#high:checked) {
     border:2px solid pink; */
 }
 .taskName{
-    display: flex;
-    flex-basis: 80%;
+    margin:10px;
 }
+.taskName input:nth-child(1){
+    margin: 10px;
+}
+.taskName input:nth-child(2){
+    width: 90%;
+    border:none;
+    border-bottom: gray 1px solid;
+    border-radius: 20px;
+    padding:5px;
+    outline: none;
+ 
+    min-width: 100px;
+    font-size: medium;
+}
+
 .project-tasks i{
     padding:5px 10px;
     font-size: 25px;
 }
 .project-show{
-    min-height: 300px;
+    min-height: 200px;
+    max-height: 400px;
+    overflow: auto;
 }
 .project-name-container{
     border:gray 1px solid;
 }
 .project-name-container input{
-    width: 90%;
+    width: 83%;
     font-size: x-large;
     outline: none;
     border: none;
+}
+.project-name-container button{
+    padding:5px;
+    color:white;
+    background-color: green;
+    border:none;
 }
 
 .project-name-container i{
@@ -283,7 +315,7 @@ font-size: large;
 }
 
 .main-section-container>h1{
-font-size: xxx-large;
+font-size: x-large;
 font-family: "Barlow Condensed", sans-serif;
 font-weight: 700;;
 }
@@ -302,6 +334,24 @@ font-weight: 700;;
 #project-container { 
     text-align: left !important;
     background-color: rgb(255, 0, 166);
+}
+.project-show i{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: red;
+    color: white;
+    padding: 5px 7px;
+    border-radius: 50%;
+    font-size: 10px;
+
+}
+.main-project-container i{
+    background: red;
+    color: white;
+    padding: 5px 7px;
+    border-radius: 50%;
+    font-size: 10px;
 }
 
 

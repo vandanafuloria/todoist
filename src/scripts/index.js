@@ -31,6 +31,7 @@ const taskSection = document.querySelector(".project-tasks");
 const cancelBtnEl = document.querySelector(".cancel-btn");
 const projectContainerEl = document.querySelector("#project-container");
 const mainSectionEl = document.querySelector(".main-section-container");
+const taskAddCancelEl = document.querySelector(".task-add-cancel");
 
 console.log(cancelBtnEl);
 
@@ -45,6 +46,11 @@ export function handleAddTask() {
   const dueDate = document.querySelector("#date");
   const priority = selectedPriority();
   const nameOfTask = taskName.value;
+  if (!nameOfTask) {
+    alert("Add task Name");
+    return;
+  }
+
   const dateOfDue = dueDate.value;
   const newTask = new Task(nameOfTask, dateOfDue, priority);
   taskName.value = "";
@@ -57,6 +63,10 @@ export function handleAddTask() {
   console.log(uiEl);
   taskContainerEl.appendChild(uiEl);
 }
+taskAddCancelEl.addEventListener("click", () => {
+  dialogEl.close();
+  mainSectionEl.style.filter = "blur(0px)";
+});
 
 // plus icon to add a task
 taskAdd.addEventListener("click", () => {
@@ -79,7 +89,7 @@ projectAddCancelEl.addEventListener("click", () => {
 
 arrowBtn.addEventListener("click", () => {
   const task = projectTaskAdd();
-  console.log(task);
+  if (!task) return;
   const addTask = addNewTask(task);
   taskSection.appendChild(addTask);
 });

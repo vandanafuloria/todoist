@@ -31,25 +31,30 @@
         <img src="../images/to-do.png" alt="" />
         <h1>Todoist</h1>
       </div>
+
+      <div>
+        <h3>Task <i class="fa-solid fa-circle-plus task"></i></h3>
+      </div>
+
+      <div>
+        <h3>Project <i class="fa-solid fa-list-check project-adding"></i></h3>
+      </div>
+      <div>
+        <h3>Journaliing<i class="fa-solid fa-book"></i></h3>
+      </div>
       <div>
         <h3 id="day"></h3>
       </div>
     </header>
     <section class="main-container">
       <div class="project-type-container">
-        <h3>Add task <i class="fa-solid fa-circle-plus task"></i></h3>
-        <h3>See All My Tasks</h3>
-        <h3>Journaliing<i class="fa-solid fa-book"></i></h3>
-        <h3>
-          Add Project <i class="fa-solid fa-circle-plus project-adding"></i>
-        </h3>
         <div id="project-container">
           <h3><i class="fa-solid fa-list-check"></i> second Project</h3>
           <h3><i class="fa-solid fa-list-check"></i> third Project</h3>
         </div>
       </div>
       <div class="main-section-container">
-        <h1>Welcome User... Plan Your Day In Advance</h1>
+        <h1>Plan Your Day In Advance</h1>
 
         <div class="project-view-container">
           <h3>project</h3>
@@ -136,6 +141,7 @@
 
         <dialog id="task-bar">
           <div class="task-add">
+            <span> <i class="fa-solid fa-xmark task-add-cancel"></i></span>
             <div class="task-add-section">
               <input
                 type="text"
@@ -194,12 +200,7 @@
           <div class="project-show">
             <h3 id="project-title">Project</h3>
             <i class="fa-solid fa-xmark cancel-btn"></i>
-            <div class="project-tasks">
-              <div class="taskName">
-                <input type="checkbox" name="" id="" />
-                <h3>Heelo this is my first tasks</h3>
-              </div>
-            </div>
+            <div class="project-tasks"></div>
           </div>
           <div class="project-name-container">
             <input
@@ -209,6 +210,7 @@
               placeholder="Add-task"
             />
             <i class="fa-solid fa-arrow-up"></i>
+            <button>Done</button>
           </div>
         </div>
       </dialog>

@@ -18,8 +18,10 @@ projectBtn.addEventListener("click", () => {
 
 export function projectTaskAdd() {
   const taskName = document.querySelector("#task-adding");
-  console.log(taskName);
+
   const task = taskName.value;
-  console.log(task);
+
+  taskName.value = "";
+
   return task;
 }
