@@ -138,11 +138,7 @@ label:has(#high:checked) {
   label:has(#low:checked) {
     background-color: green;
   }
-  .dueDate{
-    padding:10px;
-    font-size: medium;
-    font-weight: 700;
-  }
+ 
 
 
 .task-add> button{
@@ -155,6 +151,8 @@ label:has(#high:checked) {
     padding: 10px 50px;
     border: 1px gray solid;
 }
+
+
 
   
 
@@ -259,6 +257,31 @@ justify-content: space-around;
     text-align: left;
     
 }
+.task-box .task-box{
+    width: 60%;
+}
+.task-readonly-input{
+    width: 90%;
+    outline: none;
+    border: none;
+    background: transparent;
+    font-size: large;
+}
+.dueDate{
+    width: 20%;
+    min-width: 100px;
+}
+.due-date-input{
+    background: transparent;
+    border: none;
+font-size: large;
+   width: 100%;
+    outline: none;
+    text-align: center;
+    color:white;
+
+}
+
 .main-section-container>h1{
 font-size: xxx-large;
 font-family: "Barlow Condensed", sans-serif;
@@ -268,10 +291,13 @@ font-weight: 700;;
     border:1px solid green;
     margin:2em;
 }
+.editing{
+    min-width: 100px;
+}
 
 .editing i{
     font-size: 25px;
-    padding: 5px 10px;
+    padding: 5px 5px;
 }
 #project-container { 
     text-align: left !important;

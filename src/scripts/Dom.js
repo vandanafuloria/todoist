@@ -1,6 +1,7 @@
-import { DEFAULT_STATS } from "webpack-dev-server";
 import { handleAddTask } from "./index.js";
 import { projectTaskAdd } from "./project.js";
+import { deleteTask } from "./taskCreate.js";
+import { editTask } from "./taskCreate.js";
 
 const projectBtn = document.querySelector(".project-btn-continue");
 const projectSet = document.querySelector(".project");
@@ -21,7 +22,10 @@ export function addTaskBar(newTask) {
   const taskBoxCheckbox = document.createElement("input");
   taskBoxCheckbox.setAttribute("type", "checkbox");
   const taskEl = document.createElement("input");
-  taskEl.innerText = newTask.taskName;
+  taskEl.classList.add("task-readonly-input");
+
+  taskEl.value = newTask.taskName;
+  taskEl.readOnly = true; // readonly value set ;
 
   taskBox.append(taskBoxCheckbox, taskEl);
 
@@ -29,12 +33,15 @@ export function addTaskBar(newTask) {
 
   const dueDateEl = document.createElement("div");
   dueDateEl.classList.add("dueDate");
-  const lastDate = document.createElement("span");
+
+  const lastDate = document.createElement("input");
+  lastDate.classList.add("due-date-input");
+  lastDate.readOnly = true;
 
   if (newTask.dueDate === "") {
-    lastDate.innerText = "No Hurry";
+    lastDate.value = "No Due Date";
   } else {
-    lastDate.innerText = newTask.dueDate;
+    lastDate.value = newTask.dueDate;
   }
   dueDateEl.appendChild(lastDate);
 
@@ -52,12 +59,23 @@ export function addTaskBar(newTask) {
   iconContainer.classList.add("editing");
   const editEl = document.createElement("i");
   const deleteEl = document.createElement("i");
+  const saveEl = document.createElement("i");
+  saveEl.classList.add("fa-solid", "fa-floppy-disk");
   editEl.classList.add("fa-solid", "fa-pen-to-square");
-  deleteEl.classList.add("fa-solid", "fa-trash");
+  deleteEl.classList.add("fa-solid", "fa-trash", "delete-btn");
 
-  iconContainer.append(editEl, deleteEl);
+  iconContainer.append(saveEl, editEl, deleteEl);
 
   taskBarEl.append(taskBox, dueDateEl, iconContainer);
+
+  //   deleteEl.addEventListener("click", (e) => {
+  //     // console.log(e.target.parentElement);
+  //     deleteTask(e);
+  // });
+
+  deleteEl.addEventListener("click", deleteTask);
+
+  editEl.addEventListener("click", editTask);
 
   return taskBarEl;
 }
@@ -72,8 +90,8 @@ export function addNewTask(task) {
   taskNameDiv.classList.add("taskName");
   const checkBox = document.createElement("input");
   checkBox.setAttribute("type", "checkbox");
-  const taskName = document.createElement("h3");
-  taskName.innerText = task;
+  const taskName = document.createElement("input");
+  taskName.value = task;
   taskNameDiv.append(checkBox, taskName);
   console.log(taskNameDiv);
 

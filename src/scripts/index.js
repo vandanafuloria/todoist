@@ -7,6 +7,7 @@ import { projectTaskAdd } from "./project.js";
 import { listProject } from "./Dom.js";
 import { getFormattedToday } from "./Dom.js";
 import { removeRadioValue } from "./taskCreate.js";
+import { deleteTask } from "./taskCreate.js";
 
 const todayDate = document.querySelector("#day");
 const dialogEl = document.querySelector("#task-bar");
@@ -98,3 +99,10 @@ window.addEventListener("load", () => {
   todayDate.innerText = getFormattedToday();
   console.log(todayDate);
 });
+
+// delete the task
+// const deleteIcon = document.querySelector(".delete-btn");
+// deleteIcon.addEventListener("click", (e) => {
+//   const btn = e.target;
+//   console.log(btn);
+// });

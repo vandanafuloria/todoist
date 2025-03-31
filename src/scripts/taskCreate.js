@@ -2,7 +2,9 @@
  * @brief Represents a Task {taskName, dueDate}
  * @param {*} taskName
  * @param {*} dueDate
+ *
  */
+
 export function Task(taskName, dueDate, priority) {
   this.taskName = taskName;
   this.dueDate = dueDate;
@@ -29,4 +31,37 @@ export function removeRadioValue() {
   highEl.checked = false;
   mediumEl.checked = false;
   lowEl.checked = false;
+}
+
+export function deleteTask(e) {
+  const btn = e.target;
+  // console.log);
+  btn.parentElement.parentElement.remove();
+  // console.log(btn);
+  // console.log(btn.parent);
+  // btn.parent?.remove();
+  // btn.parent.remove();
+  // e.remove();
+  // console.log();
+  // const taskBox = document.querySelector(".task-box");
+  // taskBox.remove();
+}
+export function editTask(e) {
+  console.log(e);
+  const editBtn = e.target;
+  const edit = editBtn.parentElement.parentElement;
+
+  const taskInputBox = edit.firstChild;
+  const date = taskInputBox.nextElementSibling;
+  const dateInput = date.firstChild;
+  dateInput.readOnly = false;
+  dateInput.focus();
+
+  console.log(taskInputBox);
+  const taskName = taskInputBox.childNodes[1];
+  console.log(taskName);
+  taskName.readOnly = false;
+  taskName.focus();
+  taskName.style.borderBottom = "yellow 4px dotted";
+  console.log(taskName);
 }
