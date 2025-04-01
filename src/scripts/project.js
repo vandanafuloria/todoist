@@ -6,7 +6,11 @@ export function generateProjectInfo() {
   const projectTitleEl = document.querySelector("#project-title");
   const projectValue = document.querySelector("#project");
   projectTitleEl.innerText = projectValue.value;
-
+  if (projectTitleEl == "") {
+    alert("Add Project Name");
+    return;
+  }
+  projectValue.value = "";
   projectInfoEl.showModal();
 }
 

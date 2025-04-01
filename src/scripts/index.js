@@ -86,11 +86,13 @@ addTaskBtn.addEventListener("click", handleAddTask);
 // project add plus icon
 projectStartBtn.addEventListener("click", () => {
   projectEl.showModal();
+  mainSectionEl.style.filter = "blur(30px)";
 });
 
 // contiune button cross sign
 projectAddCancelEl.addEventListener("click", () => {
   projectEl.close();
+  mainSectionEl.style.filter = "blur(0px)";
 });
 
 arrowBtn.addEventListener("click", () => {

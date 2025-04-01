@@ -67,16 +67,14 @@ header div:nth-child(3):hover{
     background-color: transparent;
 }
 .project-type-container{
-    /* flex-basis: 20%; */
-    min-width:200px ;
-    background-color: rgb(44, 46, 47);
+  position: absolute;;
+   
     text-align: center;
-    height: 90vh;
-    position: absolute;
-    font-family: sans-serif;
+ 
+  
     font-weight:100;
    font-size:small;
-   color: var(--light-blue);
+  
    
 }
 
@@ -84,10 +82,6 @@ header div:nth-child(3):hover{
     display: none;
   }
 
-.project-type-container h3 i{
-    margin:2px 0.5em;
-    cursor: pointer;
-}
 .main-section-container{
   
     text-align: center;
@@ -270,6 +264,9 @@ label:has(#high:checked) {
     min-width: 100px;
     font-size: medium;
 }
+.project-container{
+    
+}
 
 .project-tasks i{
     padding:5px 10px;
@@ -315,7 +312,7 @@ justify-content: space-around;
     border: 1px white solid;
     background: #ffffff91;
     transition: ease 1s;
-    margin:2em;
+    margin:2em 0;
 }
 .added-task-container > div:hover{
     transform: scale(1.05);
@@ -359,9 +356,10 @@ font-size: large;
 }
 
 .main-section-container>h1{
-font-size: x-large;
+font-size: xxx-large;
 font-family: "Barlow Condensed", sans-serif;
-font-weight: 700;;
+color: white;
+font-weight: 600;
 }
 
 .editing{
@@ -381,8 +379,22 @@ font-weight: 700;;
 
 #project-container { 
     text-align: left !important;
-    background-color: rgb(255, 0, 166);
+   padding: 10px;
+   max-width: 200px;
+
 }
+#project-container h3{
+    margin: 10px;
+    background: rgb(255, 255, 255);
+    padding: 5px;
+    border-radius: 15px;
+    overflow-wrap: break-word;
+    cursor: pointer;
+    font-weight: 100;
+    font-family: monospace;
+   
+}
+
 .project-show i{
     position: absolute;
     right: 10px;
