@@ -5,10 +5,11 @@
  *
  */
 
-export function Task(taskName, dueDate, priority) {
+export function Task(taskName, dueDate, priority, id) {
   this.taskName = taskName;
   this.dueDate = dueDate;
   this.priority = priority;
+  this.id = id;
 }
 export function selectedPriority() {
   const radios = document.getElementsByName("priority");

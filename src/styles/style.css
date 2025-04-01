@@ -12,11 +12,19 @@ header img{
 }
 header{
     display: flex;
-    justify-content: space-between;
-    background-color: var(--primary-color);
+    justify-content: space-around;
+    background-color: #19011bf0;
     color:white;
     position: sticky;
+    top: 0;
     z-index: 2;
+    align-items: center;
+}
+header div{
+    font-size: small;
+    font-family: monospace;
+    cursor: pointer;
+    transition: ease 1s;
 }
 header  div:nth-child(1){
     align-items: center;
@@ -31,14 +39,32 @@ header div:nth-child(2){
 color:#5bd7ff;
 font-size: large;
 }
-
-h3{
-    margin:10px;
+header div:last-child{
+    cursor: none;
 }
+
+header div:nth-child(2):hover{
+    color:#5bd7ff;
+    transform: scale(1.1);
+}
+header div:nth-child(3):hover{
+    color:#5bd7ff;
+    transform: scale(1.1);
+}
+
+
+
 .main-container{
+    background-image: url(../../images/bg.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
     /* display: flex; */
     /* justify-content: space-between; */
    
+}
+.overlay{
+    background-color: transparent;
 }
 .project-type-container{
     /* flex-basis: 20%; */
@@ -63,13 +89,10 @@ h3{
     cursor: pointer;
 }
 .main-section-container{
-   position: absolute;
-   left: 200px;
-    right: 0;
+  
     text-align: center;
-    background: rgb(181,235,225);
-    background: linear-gradient(108deg, rgba(181,235,225,1) 0%, rgba(172,182,229,1) 99%);
-    height: 90vh;
+    height: 100vh;;
+    min-height: 600px;
  
 }
 .task-add {
@@ -87,6 +110,7 @@ h3{
     display: inline-block;
     width: 100%;
     text-align: left;
+    color:white;
 }
 .task-add input{
     width: 90%;
@@ -97,13 +121,19 @@ h3{
     background-color: transparent;
     outline: none;
     border:transparent 1px solid;
-    color: white;
+    color: black;
+    border-radius: 15px;
+
+    
    
 }
 .task-add input:focus{
-    border-bottom: 1px solid rgb(117, 182, 190);
-    color: var(--light-blue);
+    border-bottom: 1px solid rgb(190, 117, 164);
+    
 
+}
+.task-add input::placeholder{
+    color:rgb(255, 255, 255);
 }
 #date{
     color:var(--light-blue)
@@ -164,8 +194,10 @@ label:has(#high:checked) {
     margin:auto;
     border-radius: 30px;
     padding:10px;
-    background-color: #0b1221ef;
-    color: white;
+    background-color: #898f9170;
+    color: black;
+    border:skyblue solid 1px;
+    box-shadow: 0 0 5px #5bd7ff, 0 0 10px #5bd7ff, 0 0 15px#5bd7ff;
     
 }
 .task-add-cancel{
@@ -277,6 +309,17 @@ justify-content: space-around;
     margin: auto;
 
 }
+.added-task-container > div{
+    border-radius: 15px;
+    padding: 9px 10px;
+    border: 1px white solid;
+    background: #ffffff91;
+    transition: ease 1s;
+    margin:2em;
+}
+.added-task-container > div:hover{
+    transform: scale(1.05);
+}
 .task-box{
     display: flex
 ;
@@ -299,6 +342,7 @@ justify-content: space-around;
     background: transparent;
     font-size: large;
 }
+
 .dueDate{
     width: 20%;
     min-width: 100px;
@@ -319,10 +363,7 @@ font-size: x-large;
 font-family: "Barlow Condensed", sans-serif;
 font-weight: 700;;
 }
-.added-task-container>div{
-    border:1px solid green;
-    margin:2em;
-}
+
 .editing{
     min-width: 100px;
 }
@@ -330,7 +371,14 @@ font-weight: 700;;
 .editing i{
     font-size: 25px;
     padding: 5px 5px;
+    color:rgb(36, 41, 53);
+    transition: 1s ease;
 }
+.editing i:hover {
+    color: black;
+    transform: scale(1.1);
+}
+
 #project-container { 
     text-align: left !important;
     background-color: rgb(255, 0, 166);

@@ -40,19 +40,25 @@ console.log(cancelBtnEl);
  * adding to ui
  */
 
+const taskElement = {}; // object to stores all the tasks
+
 export function handleAddTask() {
   const taskName = document.querySelector("#task");
 
   const dueDate = document.querySelector("#date");
   const priority = selectedPriority();
   const nameOfTask = taskName.value;
+  const id = Date.now();
   if (!nameOfTask) {
     alert("Add task Name");
     return;
   }
 
   const dateOfDue = dueDate.value;
-  const newTask = new Task(nameOfTask, dateOfDue, priority);
+  const newTask = new Task(nameOfTask, dateOfDue, priority, id);
+  taskElement[newTask.id] = newTask;
+  console.log(taskElement);
+
   taskName.value = "";
   dueDate.value = "";
   removeRadioValue();

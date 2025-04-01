@@ -39,181 +39,184 @@
       <div>
         <h3>Project <i class="fa-solid fa-list-check project-adding"></i></h3>
       </div>
-      <div>
-        <h3>Journaliing<i class="fa-solid fa-book"></i></h3>
-      </div>
+
       <div>
         <h3 id="day"></h3>
       </div>
     </header>
     <section class="main-container">
-      <div class="project-type-container">
+      <div class="overlay">
+        <!-- <div class="project-type-container">
         <div id="project-container">
           <h3><i class="fa-solid fa-list-check"></i> second Project</h3>
           <h3><i class="fa-solid fa-list-check"></i> third Project</h3>
         </div>
-      </div>
-      <div class="main-section-container">
-        <h1>Plan Your Day In Advance</h1>
+      </div> -->
+        <div class="main-section-container">
+          <h1>Plan Your Day In Advance</h1>
 
-        <div class="project-view-container">
-          <h3>project</h3>
-          <input
-            type="text"
-            name=""
-            id="project-name"
-            placeholder="first Project"
-            readonly
-          />
+          <div class="project-view-container">
+            <h3>project</h3>
+            <input
+              type="text"
+              name=""
+              id="project-name"
+              placeholder="first Project"
+              readonly
+            />
 
-          <!--first-->
-          <div class="task-view">
-            <div class="project-task-view">
-              <input type="checkbox" name="" id="" />
-              <input
-                type="text"
-                name=""
-                id=""
-                value="This is my fist project"
-                readonly
-              />
-            </div>
-            <div class="icons">
-              <i class="fa-solid fa-pen"></i>
-              <i class="fa-solid fa-trash delete-btn"></i>
-            </div>
-          </div>
-          <!--2rd-->
-          <div class="task-view">
-            <div class="project-task-view">
-              <input type="checkbox" name="" id="" />
-              <input
-                type="text"
-                name=""
-                id=""
-                value="this is my project"
-                readonly
-              />
-            </div>
-            <div class="icons">
-              <i class="fa-solid fa-pen"></i>
-              <i class="fa-solid fa-trash"></i>
-            </div>
-          </div>
-
-          <!--3rd-->
-
-          <div class="task-view">
-            <div class="project-task-view">
-              <input type="checkbox" name="" id="" />
-              <input
-                type="text"
-                name=""
-                id=""
-                value="This is my fist project"
-                readonly
-              />
-            </div>
-            <div class="icons">
-              <i class="fa-solid fa-pen"></i>
-              <i class="fa-solid fa-trash"></i>
-            </div>
-          </div>
-        </div>
-        <div class="flex-container">
-          <div class="added-task-container">
-            <div class="task-box">
-              <div class="task-box">
+            <!--first-->
+            <div class="task-view">
+              <div class="project-task-view">
                 <input type="checkbox" name="" id="" />
-                <h3>Hele my task element is this</h3>
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  value="This is my fist project"
+                  readonly
+                />
               </div>
-              <div>
-                <span>21-04-2025</span>
+              <div class="icons">
+                <i class="fa-solid fa-pen"></i>
+                <i class="fa-solid fa-trash delete-btn"></i>
               </div>
-              <div class="editing">
-                <i class="fa-solid fa-pen-to-square"></i>
+            </div>
+            <!--2rd-->
+            <div class="task-view">
+              <div class="project-task-view">
+                <input type="checkbox" name="" id="" />
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  value="this is my project"
+                  readonly
+                />
+              </div>
+              <div class="icons">
+                <i class="fa-solid fa-pen"></i>
+                <i class="fa-solid fa-trash"></i>
+              </div>
+            </div>
+
+            <!--3rd-->
+
+            <div class="task-view">
+              <div class="project-task-view">
+                <input type="checkbox" name="" id="" />
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  value="This is my fist project"
+                  readonly
+                />
+              </div>
+              <div class="icons">
+                <i class="fa-solid fa-pen"></i>
                 <i class="fa-solid fa-trash"></i>
               </div>
             </div>
           </div>
-          <div class="added-journalling-container"></div>
+          <div class="flex-container">
+            <div class="added-task-container">
+              <div class="task-box">
+                <div class="task-box">
+                  <input type="checkbox" name="" id="" />
+                  <h3>Hele my task element is this</h3>
+                </div>
+                <div>
+                  <span>21-04-2025</span>
+                </div>
+                <div class="editing">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                  <i class="fa-solid fa-trash"></i>
+                </div>
+              </div>
+            </div>
+            <div class="added-journalling-container"></div>
+          </div>
+
+          <dialog id="task-bar">
+            <div class="task-add">
+              <span> <i class="fa-solid fa-xmark task-add-cancel"></i></span>
+              <div class="task-add-section">
+                <input
+                  type="text"
+                  name="task"
+                  id="task"
+                  placeholder="Add Your Task Here"
+                  autocomplete="off"
+                />
+              </div>
+
+              <div class="date-container">
+                <input type="date" id="date" />
+              </div>
+              <div class="priority-container">
+                <label for="high"
+                  ><input type="radio" id="high" name="priority" value="high" />
+                  <span>High</span></label
+                >
+
+                <label for="medium">
+                  <input
+                    type="radio"
+                    id="medium"
+                    name="priority"
+                    value="medium"
+                  />
+                  <span>Medium</span></label
+                >
+
+                <label for="low">
+                  <input
+                    type="radio"
+                    id="low"
+                    name="priority"
+                    value="low"
+                  /><span>Low</span></label
+                >
+              </div>
+              <button class="task-created">Add Task</button>
+            </div>
+          </dialog>
         </div>
 
-        <dialog id="task-bar">
-          <div class="task-add">
-            <span> <i class="fa-solid fa-xmark task-add-cancel"></i></span>
-            <div class="task-add-section">
+        <dialog class="project">
+          <div class="main-project-container">
+            <input
+              type="text"
+              name="project"
+              id="project"
+              placeholder="Add a List Title"
+            />
+            <button class="project-btn-continue">Continue</button>
+            <i class="fa-solid fa-xmark project-add-cancel"></i>
+          </div>
+        </dialog>
+
+        <dialog class="project-info">
+          <div class="projects">
+            <div class="project-show">
+              <h3 id="project-title">Project</h3>
+              <i class="fa-solid fa-xmark cancel-btn"></i>
+              <div class="project-tasks"></div>
+            </div>
+            <div class="project-name-container">
               <input
                 type="text"
-                name="task"
-                id="task"
-                placeholder="Add Your Task Here"
-                autocomplete="off"
+                name=""
+                id="task-adding"
+                placeholder="Add-task"
               />
+              <i class="fa-solid fa-arrow-up"></i>
+              <button>Done</button>
             </div>
-
-            <div class="date-container">
-              <input type="date" id="date" />
-            </div>
-            <div class="priority-container">
-              <label for="high"
-                ><input type="radio" id="high" name="priority" value="high" />
-                <span>High</span></label
-              >
-
-              <label for="medium">
-                <input
-                  type="radio"
-                  id="medium"
-                  name="priority"
-                  value="medium"
-                />
-                <span>Medium</span></label
-              >
-
-              <label for="low">
-                <input type="radio" id="low" name="priority" value="low" /><span
-                  >Low</span
-                ></label
-              >
-            </div>
-            <button class="task-created">Add Task</button>
           </div>
         </dialog>
       </div>
-
-      <dialog class="project">
-        <div class="main-project-container">
-          <input
-            type="text"
-            name="project"
-            id="project"
-            placeholder="Add a List Title"
-          />
-          <button class="project-btn-continue">Continue</button>
-          <i class="fa-solid fa-xmark project-add-cancel"></i>
-        </div>
-      </dialog>
-
-      <dialog class="project-info">
-        <div class="projects">
-          <div class="project-show">
-            <h3 id="project-title">Project</h3>
-            <i class="fa-solid fa-xmark cancel-btn"></i>
-            <div class="project-tasks"></div>
-          </div>
-          <div class="project-name-container">
-            <input
-              type="text"
-              name=""
-              id="task-adding"
-              placeholder="Add-task"
-            />
-            <i class="fa-solid fa-arrow-up"></i>
-            <button>Done</button>
-          </div>
-        </div>
-      </dialog>
     </section>
     <!-- <script src="scripts/createTask.js"></script>
     <script src="scripts/index.js"></script> -->
