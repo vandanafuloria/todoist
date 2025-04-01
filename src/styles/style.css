@@ -7,13 +7,13 @@
     --light-blue:rgb(195, 222, 233);
 }
 header img{
-    width: 50px;
+    width: 45px;
 
 }
 header{
     display: flex;
     justify-content: space-around;
-    background-color: #19011bf0;
+    background-color:#0d0d0df0;;
     color:white;
     position: sticky;
     top: 0;
@@ -36,26 +36,26 @@ header div:nth-child(1) h1{
 }
 
 header div:nth-child(2){
-color:#5bd7ff;
-font-size: large;
+color:#994eec;
+/* font-size: large; */
 }
 header div:last-child{
     cursor: none;
 }
 
 header div:nth-child(2):hover{
-    color:#5bd7ff;
+    color:#994eec;
     transform: scale(1.1);
 }
 header div:nth-child(3):hover{
-    color:#5bd7ff;
+    color:#994eec;
     transform: scale(1.1);
 }
 
 
 
 .main-container{
-    background-image: url(../../images/image.png);
+    background-image: url(../../images/b.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -64,7 +64,7 @@ header div:nth-child(3):hover{
    
 }
 .overlay{
-    background-color: transparent;
+    background-color:rgba(0, 0, 0, 0.523);
 }
 .project-type-container{
   position: absolute;;
@@ -115,7 +115,7 @@ header div:nth-child(3):hover{
     background-color: transparent;
     outline: none;
     border:transparent 1px solid;
-    color: black;
+    color:white;
     border-radius: 15px;
 
     
@@ -188,7 +188,7 @@ label:has(#high:checked) {
     margin:auto;
     border-radius: 30px;
     padding:10px;
-    background-color: #898f9170;
+    background-color: #acafb4bf;
     color: black;
     border:skyblue solid 1px;
     box-shadow: 0 0 5px #5bd7ff, 0 0 10px #5bd7ff, 0 0 15px#5bd7ff;
@@ -302,21 +302,21 @@ display: flex;
 justify-content: space-around;
 }
 .added-task-container{
-    flex-basis: 60%;
+    flex-basis: 40%;
     margin: auto;
 
 }
 .added-task-container > div{
     border-radius: 15px;
     padding: 9px 10px;
-    border: 1px white solid;
-    background: #ffffff91;
-    transition: ease 1s;
-    margin:2em 0;
+  box-shadow: 0 0 5px white;
+   background-color: rgb(239 235 240 / 90%);
+   
+    margin:2.5em 0;
+    color:white;
+    font-family: monospace;
 }
-.added-task-container > div:hover{
-    transform: scale(1.05);
-}
+
 .task-box{
     display: flex
 ;
@@ -338,7 +338,10 @@ justify-content: space-around;
     border: none;
     background: transparent;
     font-size: large;
+   color: black;
+    transition: 1s ease-in-out;
 }
+
 
 .dueDate{
     width: 20%;
@@ -358,8 +361,10 @@ font-size: large;
 .main-section-container>h1{
 font-size: xxx-large;
 font-family: "Barlow Condensed", sans-serif;
-color: white;
+color:black;
+text-shadow: 0 0 5px whitesmoke, 0 0 10px whitesmoke, 0 0 15px whitesmoke;
 font-weight: 600;
+
 }
 
 .editing{
@@ -369,11 +374,11 @@ font-weight: 600;
 .editing i{
     font-size: 25px;
     padding: 5px 5px;
-    color:rgb(36, 41, 53);
+    color:#2e2d30;
     transition: 1s ease;
 }
 .editing i:hover {
-    color: black;
+    color:#5c0d76e1;
     transform: scale(1.1);
 }
 
@@ -385,8 +390,9 @@ font-weight: 600;
 }
 #project-container h3{
     margin: 10px;
-    background: rgb(255, 255, 255);
-    padding: 5px;
+    color: white;
+    border: 1px solid white;
+    padding: 10px;
     border-radius: 15px;
     overflow-wrap: break-word;
     cursor: pointer;

@@ -39,8 +39,35 @@ console.log(cancelBtnEl);
  * extracting value filled by user
  * adding to ui
  */
+let taskElement = {};
 
-const taskElement = {}; // object to stores all the tasks
+function saveToLocalStorage(jsonString) {
+  localStorage.setItem("notes", jsonString);
+  console.log("Data has been saved to localStorage.");
+  console.log(localStorage.getItem("notes"));
+}
+
+function saveTask() {
+  const jsonString = JSON.stringify(taskElement);
+  saveToLocalStorage(jsonString);
+}
+
+function loadStorage() {
+  const parse = localStorage.getItem("notes");
+  const parsedTasks = JSON.parse(parse);
+  console.log("test: ", parsedTasks);
+  for (let task in parsedTasks) {
+    // taskElement[task.id] = task;
+    // addTaskBar(task);
+    const task_ = addTaskBar(parsedTasks[task]);
+    taskContainerEl.appendChild(task_);
+  }
+  taskElement = parsedTasks;
+  console.log(taskElement);
+  console.log("loading storage...");
+}
+
+// object to stores all the tasks
 
 export function handleAddTask() {
   const taskName = document.querySelector("#task");
@@ -57,7 +84,8 @@ export function handleAddTask() {
   const dateOfDue = dueDate.value;
   const newTask = new Task(nameOfTask, dateOfDue, priority, id);
   taskElement[newTask.id] = newTask;
-  console.log(taskElement);
+
+  saveTask();
 
   taskName.value = "";
   dueDate.value = "";
@@ -124,3 +152,4 @@ window.addEventListener("load", () => {
 //   const btn = e.target;
 //   console.log(btn);
 // });
+window.addEventListener("DOMContentLoaded", loadStorage);
