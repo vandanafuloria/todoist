@@ -2,8 +2,7 @@ import "../styles/style.css";
 import { selectedPriority } from "./taskCreate.js";
 import { addNewTask, addTaskBar } from "./Dom.js";
 import { Task } from "./taskCreate.js";
-import { generateProjectInfo } from "./project.js";
-import { projectTaskAdd } from "./project.js";
+
 import { listProject } from "./Dom.js";
 import { getFormattedToday } from "./Dom.js";
 import { removeRadioValue } from "./taskCreate.js";
@@ -29,7 +28,7 @@ const arrowBtn = document.querySelector(".fa-arrow-up");
 
 const taskSection = document.querySelector(".project-tasks");
 const cancelBtnEl = document.querySelector(".cancel-btn");
-const projectContainerEl = document.querySelector("#project-container");
+export const projectContainerEl = document.querySelector("#project-container");
 
 const mainSectionEl = document.querySelector(".main-section-container");
 const taskAddCancelEl = document.querySelector(".task-add-cancel");
@@ -41,11 +40,10 @@ console.log(cancelBtnEl);
  * adding to ui
  */
 let taskElement = {};
+let projectElement = {};
 
 export function saveToLocalStorage(jsonString) {
   localStorage.setItem("notes", jsonString);
-  console.log("Data has been saved to localStorage.");
-  console.log(localStorage.getItem("notes"));
 }
 
 export function saveTask() {
@@ -64,8 +62,6 @@ function loadStorage() {
     taskContainerEl.appendChild(task_);
   }
   taskElement = parsedTasks;
-  console.log(taskElement);
-  console.log("loading storage...");
 }
 
 // object to stores all the tasks
@@ -124,16 +120,23 @@ projectAddCancelEl.addEventListener("click", () => {
   mainSectionEl.style.filter = "blur(0px)";
 });
 
-arrowBtn.addEventListener("click", () => {
-  const task = projectTaskAdd();
-  if (!task) return;
-  const addTask = addNewTask(task);
-  taskSection.appendChild(addTask);
-});
+// arrowBtn.addEventListener("click", () => {
+//   const task = projectTaskAdd();
+//   if (!task) return;
+//   const addTask = addNewTask(task);
+//   taskSection.appendChild(addTask);
+// });
 // inside project info cross icon
-cancelBtnEl.addEventListener("click", () => {
-  projectInfoEl.close();
-});
+// cancelBtnEl.addEventListener("click", () => {
+//   projectInfoEl.close();
+// });
+
+function addProjectTasks() {
+  const projectBox = document.querySelector(".project-view-container");
+
+  projectBox.style.display = "block";
+  console.log("Project tasks view shown");
+}
 
 projectBtn.addEventListener("click", () => {
   const projectName = document.querySelector("#projectName");
@@ -141,8 +144,13 @@ projectBtn.addEventListener("click", () => {
   const value = projectName.value;
   console.log("this is value", value);
   const projectHeading = listProject(projectName.value);
-  console.log(projectHeading);
+
   projectContainerEl.appendChild(projectHeading);
+  projectHeading.addEventListener("click", addProjectTasks);
+  projectEl.close();
+  mainSectionEl.style.filter = "blur(0px)";
+  projectElement = projectName.value = "";
+
   // Clear input after creation
 });
 

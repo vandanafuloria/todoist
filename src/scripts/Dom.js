@@ -1,18 +1,51 @@
-import { handleAddTask } from "./index.js";
-import { projectTaskAdd } from "./project.js";
+import { handleAddTask, taskElement } from "./index.js";
+
 import { deleteTask, saveEditedTask } from "./taskCreate.js";
 import { editTask } from "./taskCreate.js";
-import { generateProjectInfo } from "./project.js";
 
 const projectBtn = document.querySelector(".project-btn-continue");
 const projectSet = document.querySelector(".project");
 const projectInfoEl = document.querySelector(".project-info");
+
+import { projectContainerEl } from "./index.js";
 
 /**
  *
  * @param {*} newTask
  * @returns  complete task bar which is formed by the user with edit and delete fucntionality;
  */
+
+export let ProjectTask = {};
+
+export function projectSaveToLocalStorage(json) {
+  localStorage.setItem("project", json);
+}
+
+function loadStorageProjects() {
+  const parseProjects = localStorage.getItem("projects");
+  const parsedTasks = JSON.parse(parseProjects);
+
+  for (const taskId in ProjectTask) {
+    if (ProjectTask.hasOwnProperty(taskId)) {
+      // Checks if property belongs to the object itself
+      console.log(`ID: ${taskId}, Value: ${ProjectTask[taskId]}`);
+      // Or use the values in your UI
+      const taskElement = listProject(ProjectTask[taskId], taskId);
+      projectContainerEl.appendChild(taskElement);
+    }
+  }
+
+  // for (let task in parsedTasks) {
+  //   console.log(parsedTasks[task]);
+  //   const task_ = listProject(parsedTasks[task]);
+  //   projectContainerEl.appendChild(task_);
+  // }
+  // ProjectTask = parsedTasks;
+}
+export function saveProject() {
+  const json = JSON.stringify(ProjectTask);
+  projectSaveToLocalStorage(json);
+}
 export function addTaskBar(newTask) {
   const taskBarEl = document.createElement("div");
   taskBarEl.classList.add("task-box");
@@ -104,9 +137,18 @@ export function addNewTask(task) {
 /**
  *
  */
+
+function AddProjectTasks() {
+  const projectBox = document.querySelector(".project-view-container");
+
+  projectBox.style.display = "block";
+  console.log("Project tasks view shown");
+}
+
 export function listProject(name) {
   console.log(name);
   let projectTitle = document.createElement("div");
+  projectTitle.classList.add("project-heading");
 
   // Create the i element
   let i = document.createElement("i");
@@ -116,7 +158,12 @@ export function listProject(name) {
 
   projectTitle.appendChild(i);
   projectTitle.appendChild(title);
-  generateProjectInfo(name);
+  const timestamp = Date.now();
+  ProjectTask[timestamp] = name;
+  saveProject();
+
+  projectTitle.addEventListener("click", AddProjectTasks);
+
   return projectTitle;
 }
 
@@ -128,3 +175,5 @@ export function getFormattedToday() {
 
   return `${day} ${month} ${year}`; // "28 March 2025"
 }
+
+window.addEventListener("DOMContentLoaded", loadStorageProjects);

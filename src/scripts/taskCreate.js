@@ -38,7 +38,6 @@ export function removeRadioValue() {
 
 export function deleteTask(e) {
   const btn = e.target;
-  console.log(btn);
 
   btn.parentElement.parentElement.remove();
 }
