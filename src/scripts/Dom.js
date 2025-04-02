@@ -2,6 +2,7 @@ import { handleAddTask } from "./index.js";
 import { projectTaskAdd } from "./project.js";
 import { deleteTask, saveEditedTask } from "./taskCreate.js";
 import { editTask } from "./taskCreate.js";
+import { generateProjectInfo } from "./project.js";
 
 const projectBtn = document.querySelector(".project-btn-continue");
 const projectSet = document.querySelector(".project");
@@ -104,18 +105,19 @@ export function addNewTask(task) {
  *
  */
 export function listProject(name) {
-  // Create the h3 element
-  let h3 = document.createElement("h3");
+  console.log(name);
+  let projectTitle = document.createElement("div");
 
   // Create the i element
   let i = document.createElement("i");
   i.classList.add("fa-solid", "fa-list-check");
+  const title = document.createElement("h3");
+  title.innerText = name;
 
-  // Append the icon to the h3
-  h3.appendChild(i);
-  h3.appendChild(document.createTextNode(" " + name));
-  console.log("this is h3", h3);
-  return h3;
+  projectTitle.appendChild(i);
+  projectTitle.appendChild(title);
+  generateProjectInfo(name);
+  return projectTitle;
 }
 
 export function getFormattedToday() {

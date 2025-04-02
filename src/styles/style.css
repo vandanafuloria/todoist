@@ -97,9 +97,7 @@ header div:nth-child(3):hover{
  
   border-radius: 10px;
 }
-.task-add div{
- 
-}
+
 .task-add label{
     display: inline-block;
     width: 100%;
@@ -132,10 +130,7 @@ header div:nth-child(3):hover{
 #date{
     color:var(--light-blue)
 }
-.task-add button{
-  
-  
-}
+
 .priority-container {
     display: flex;
    flex-direction: row;
@@ -241,12 +236,7 @@ label:has(#high:checked) {
     margin: auto;
     width: 40%;
 }
-.project-tasks{
-    /* display: flex;
-    fle
-    align-items: center;
-    border:2px solid pink; */
-}
+
 .taskName{
     margin:10px;
 }
@@ -264,9 +254,7 @@ label:has(#high:checked) {
     min-width: 100px;
     font-size: medium;
 }
-.project-container{
-    
-}
+
 
 .project-tasks i{
     padding:5px 10px;
@@ -310,7 +298,7 @@ justify-content: space-around;
     border-radius: 15px;
     padding: 9px 10px;
   box-shadow: 0 0 5px white;
-   background-color: rgb(239 235 240 / 90%);
+   background-color: rgba(90, 85, 91, 0.9);
    
     margin:2.5em 0;
     color:white;
@@ -389,6 +377,10 @@ font-weight: 600;
 
 }
 #project-container h3{
+    display: inline;
+    padding:0 5px;
+}
+#project-container div{
     margin: 10px;
     color: white;
     border: 1px solid white;

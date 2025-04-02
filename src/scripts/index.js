@@ -30,6 +30,7 @@ const arrowBtn = document.querySelector(".fa-arrow-up");
 const taskSection = document.querySelector(".project-tasks");
 const cancelBtnEl = document.querySelector(".cancel-btn");
 const projectContainerEl = document.querySelector("#project-container");
+
 const mainSectionEl = document.querySelector(".main-section-container");
 const taskAddCancelEl = document.querySelector(".task-add-cancel");
 
@@ -41,13 +42,13 @@ console.log(cancelBtnEl);
  */
 let taskElement = {};
 
-function saveToLocalStorage(jsonString) {
+export function saveToLocalStorage(jsonString) {
   localStorage.setItem("notes", jsonString);
   console.log("Data has been saved to localStorage.");
   console.log(localStorage.getItem("notes"));
 }
 
-function saveTask() {
+export function saveTask() {
   const jsonString = JSON.stringify(taskElement);
   saveToLocalStorage(jsonString);
 }
@@ -135,10 +136,14 @@ cancelBtnEl.addEventListener("click", () => {
 });
 
 projectBtn.addEventListener("click", () => {
-  const name = projectName.value;
+  const projectName = document.querySelector("#projectName");
 
-  const projectHeading = listProject(name);
+  const value = projectName.value;
+  console.log("this is value", value);
+  const projectHeading = listProject(projectName.value);
+  console.log(projectHeading);
   projectContainerEl.appendChild(projectHeading);
+  // Clear input after creation
 });
 
 window.addEventListener("load", () => {
@@ -153,3 +158,5 @@ window.addEventListener("load", () => {
 //   console.log(btn);
 // });
 window.addEventListener("DOMContentLoaded", loadStorage);
+
+export { taskElement };

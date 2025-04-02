@@ -4,6 +4,8 @@
  * @param {*} dueDate
  *
  */
+import { saveToLocalStorage, saveTask } from "./index.js";
+import { taskElement } from "./index.js";
 
 export function Task(taskName, dueDate, priority, id) {
   this.taskName = taskName;
@@ -36,16 +38,9 @@ export function removeRadioValue() {
 
 export function deleteTask(e) {
   const btn = e.target;
-  // console.log);
+  console.log(btn);
+
   btn.parentElement.parentElement.remove();
-  // console.log(btn);
-  // console.log(btn.parent);
-  // btn.parent?.remove();
-  // btn.parent.remove();
-  // e.remove();
-  // console.log();
-  // const taskBox = document.querySelector(".task-box");
-  // taskBox.remove();
 }
 export function editTask(e) {
   console.log(e);
